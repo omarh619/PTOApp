@@ -1,15 +1,13 @@
 
 const TicketList = require('../models/ticketList')
-//const User = require('../models/User')
+
 
 module.exports = {
     getProfile: async (req, res) => {
-        console.log(req.user.id)
+        console.log(req.user)
         try {
           //Since we have a session each request (req) constains the logged-in users info: req.user
-          //console.log(req.user) tp see everything
-          //Grabbing just the posts of the logged-in user
-        // const user = await User.findById({user: req.params.id})
+        
           const tickets = await TicketList.find({ user: req.user.id });
           //Sending post data from mongodb and user data to ejs template
           res.render("profile.ejs", {  ticketList: tickets, user: req.user});
@@ -19,12 +17,9 @@ module.exports = {
         }
       },
      isAdmin: async (req, res) => {
-        console.log(req.user.isAdmin)
+        
         try {
-          //Since we have a session each request (req) constains the logged-in users info: req.user
-          //console.log(req.user) tp see everything
-          //Grabbing just the posts of the logged-in user
-        // const user = await User.findById({user: req.params.id})
+         
           const tickets = await TicketList.find({  });
           //Sending post data from mongodb and user data to ejs template
           res.render("admin.ejs", {  ticketList: tickets, user: req.user});
