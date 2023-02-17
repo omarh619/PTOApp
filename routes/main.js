@@ -14,7 +14,9 @@ router.get("/admin", ensureAuth, ensureAdmin, editController.isAdmin);
 
 
 //Routes for user login/signup
+
 router.get("/login", authController.getLogin);
+router.get("/login", authController.isAdmin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);

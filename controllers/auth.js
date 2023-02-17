@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 exports.isAdmin =  (req, res) => {
   console.log(req.user)
-  if (req.user.isAdmin == true) {
+  if (req.user) {
     return res.redirect("/admin");
   }
   res.render("login", {
@@ -108,7 +108,8 @@ exports.postSignup = (req, res, next) => {
     password: req.body.password,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    employeeID: req.body.employeeID
+    employeeID: req.body.employeeID,
+
   });
 
   User.findOne(
