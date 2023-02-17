@@ -25,10 +25,9 @@ npm install
 Create a `.env` file in config folder and add the following as `key = value`
 ```
 
-## Run tests
-
 ```sh
   - PORT = 2121 (can be any port example: 3000)
+  - DB_STRING = `your database URI`
 ```
 
 ## Author
