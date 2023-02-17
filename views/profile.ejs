@@ -17,7 +17,7 @@
     <a href="/logout" class="col-3 btn btn-warning">Logout</a>
 </div>
     <section class="container">
-        <h1>Welcome <%= user.firstName.slice(0,1).toUpperCase() + user.firstName.slice(1,user.firstName.length).toLowerCase() %>!</h1>
+        <h1 class="text-right">Welcome <%= user.firstName.slice(0,1).toUpperCase() + user.firstName.slice(1,user.firstName.length).toLowerCase() %>!</h1>
         <h2>PTO Request</h2>
         <section class="jumbotron">
             <h3>Add New Request:</h3>
@@ -57,8 +57,9 @@
                             : tickets.status == 'Denied' ? 'label-danger' 
                             : 'label-info'%>"><%=tickets.status%>
                     </span></p>
+                    
                     <h3><%=tickets.startDate%></h3>
-                    <h4>To</h4>
+                    <h3>To:</h3>
                     <h3><%=tickets.endDate%></h3>
                     <h4> <%=tickets.description%></h4>
                     <p><span class="glyphicon glyphicon-time"></span><%=tickets.severity%> <span class="glyphicon glyphicon-user">

@@ -18,7 +18,7 @@
     <a href="/logout" class="col-3 btn btn-warning">Logout</a>
 </div>
     <section class="container">
-        <h1 >ADMIN Page</h1>
+        <h1 class="text-center">*ADMIN PAGE*</h1>
         <section class="jumbotron">
             <h3>Add New Request:</h3>
             <form id="issueInputForm" method="POST" action="/new" >
@@ -59,7 +59,7 @@
                     </span></p>
                     
                     <h3><%=tickets.startDate%></h3>
-                    <h4>To</h4>
+                    <h3>To:</h3>
                     <h3><%=tickets.endDate%></h3>
                     <h4> <%=tickets.description%></h4>
                     <p><span class="glyphicon glyphicon-time"></span><%=tickets.severity%> <span class="glyphicon glyphicon-user">
@@ -69,7 +69,7 @@
                    
                     
                     <a href="/edit/<%=tickets._id%>" class="btn btn-success">Approve</a>
-                    <a href="/edit/deny/<%=tickets._id%>" class="btn btn-danger">Denied</a>
+                    <a href="/edit/deny/<%=tickets._id%>" class="btn btn-danger">Reject</a>
                     <a href="/edit/remove/<%=tickets._id%>" class="btn btn-warning">Delete</a>
                     </div>
                  <% }) %>   
