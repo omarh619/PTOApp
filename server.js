@@ -10,6 +10,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const homeRoutes = require("./routes/main");
 const editRoutes = require("./routes/edit");
+const port = process.env.PORT || 2121
 
 
 //Use .env file in config folder
